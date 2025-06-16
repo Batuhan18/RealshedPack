@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +9,7 @@ namespace EntityLayer.Entities
 {
     public class Properties
     {
+        [Key]
         public int PropertiesId { get; set; }
         public string? Title { get; set; }
         public string? Slug_Seo { get; set; }

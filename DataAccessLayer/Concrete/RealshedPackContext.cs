@@ -20,5 +20,6 @@ namespace DataAccessLayer.Concrete
         public DbSet<Contact_Messages> Contact_Messages { get; set; }
         public DbSet<Properties> Properties { get; set; }
         public DbSet<Settings> Settings { get; set; }
+        public DbSet<About> Abouts { get; set; }
     }
 }
