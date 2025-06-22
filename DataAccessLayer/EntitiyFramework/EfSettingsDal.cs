@@ -15,5 +15,10 @@ namespace DataAccessLayer.EntitiyFramework
         public EfSettingsDal(RealshedPackContext context) : base(context)
         {
         }
+
+        public void Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

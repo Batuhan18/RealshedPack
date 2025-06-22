@@ -9,5 +9,6 @@ namespace DataAccessLayer.Abstract
 {
     public interface IContact_MessagesDal : IGenericDal<Contact_Messages>
     {
+        void Delete(int id);
     }
 }

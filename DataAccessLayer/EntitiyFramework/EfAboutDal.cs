@@ -2,6 +2,7 @@
 using DataAccessLayer.Concrete;
 using DataAccessLayer.Repositories;
 using EntityLayer.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,19 @@ namespace DataAccessLayer.EntitiyFramework
     {
         public EfAboutDal(RealshedPackContext context) : base(context)
         {
+        }
+
+        public void Delete(int id)
+        {
+            using (var context = new RealshedPackContext())
+            {
+                var entity = context.Set<About>().Find(id);
+                if (entity != null)
+                {
+                    context.Set<About>().Remove(entity);
+                    context.SaveChanges();
+                }
+            }
         }
     }
 }

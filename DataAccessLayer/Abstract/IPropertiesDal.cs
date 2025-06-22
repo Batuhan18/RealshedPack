@@ -9,5 +9,6 @@ namespace DataAccessLayer.Abstract
 {
     public interface IPropertiesDal : IGenericDal<Properties>
     {
+        void Delete(int id);
     }
 }

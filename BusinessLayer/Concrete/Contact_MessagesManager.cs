@@ -25,7 +25,12 @@ namespace BusinessLayer.Concrete
 
         public void TDelete(Contact_Messages entity)
         {
-            _contact_MessagesDal.Delete(entity);
+            
+        }
+
+        public void TDelete(int id)
+        {
+            _contact_MessagesDal.Delete(id);
         }
 
         public Contact_Messages TGetById(int id)

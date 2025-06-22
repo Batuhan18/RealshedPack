@@ -17,9 +17,11 @@ namespace BusinessLayer.Concrete
             _settingsDal.Add(entity);
         }
 
-        public void TDelete(Settings entity)
+    
+
+        public void TDelete(int id)
         {
-            _settingsDal.Delete(entity);
+            _settingsDal.Delete(id);
         }
 
         public Settings TGetById(int id)

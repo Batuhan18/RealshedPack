@@ -9,5 +9,6 @@ namespace DataAccessLayer.Abstract
 {
     public interface IAmenitiesDal : IGenericDal<Amenities>
     {
+        void Delete(int id);
     }
 }

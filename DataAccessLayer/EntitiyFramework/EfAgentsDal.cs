@@ -15,5 +15,10 @@ namespace DataAccessLayer.EntitiyFramework
         public EfAgentsDal(RealshedPackContext context) : base(context)
         {
         }
+
+        public void Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

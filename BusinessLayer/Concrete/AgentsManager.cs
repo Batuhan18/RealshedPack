@@ -23,9 +23,10 @@ namespace BusinessLayer.Concrete
             _agentsDal.Add(entity);
         }
 
-        public void TDelete(Agents entity)
+
+        public void TDelete(int id)
         {
-            _agentsDal.Delete(entity);
+            _agentsDal.Delete(id);
         }
 
         public Agents TGetById(int id)

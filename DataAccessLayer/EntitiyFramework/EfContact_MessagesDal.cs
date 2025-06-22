@@ -15,5 +15,10 @@ namespace DataAccessLayer.EntitiyFramework
         public EfContact_MessagesDal(RealshedPackContext context) : base(context)
         {
         }
+
+        public void Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

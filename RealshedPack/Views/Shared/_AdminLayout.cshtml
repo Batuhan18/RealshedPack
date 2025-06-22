@@ -38,12 +38,12 @@
                 </div>
 
                 @await Component.InvokeAsync("_LayoutNavbarPartialComponent")
-              
+                @RenderBody()
+            </div>
+
+            @await Component.InvokeAsync("_LayoutFooterPartialComponent")
         </div>
-            @RenderBody()
-            @await Component.InvokeAsync("_LayoutFooterPartialComponent")     
     </div>
-    </div>
-    @await Component.InvokeAsync("_LayoutScriptPartialComponent")  
+    @await Component.InvokeAsync("_LayoutScriptPartialComponent")
 </body>
 </html>

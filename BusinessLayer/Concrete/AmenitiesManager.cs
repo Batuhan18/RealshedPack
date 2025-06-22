@@ -23,9 +23,10 @@ namespace BusinessLayer.Concrete
             _amenitiesDal.Add(entity);
         }
 
-        public void TDelete(Amenities entity)
+     
+        public void TDelete(int id)
         {
-            _amenitiesDal.Delete(entity);
+            _amenitiesDal.Delete(id);
         }
 
         public Amenities TGetById(int id)

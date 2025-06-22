@@ -3,6 +3,7 @@ using BusinessLayer.Concrete;
 using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete;
 using DataAccessLayer.EntitiyFramework;
+using RealshedPack.Mapping;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,6 +28,15 @@ builder.Services.AddScoped<IPropertiesDal, EfPropertiesDal>();
 
 builder.Services.AddScoped<ISettingsService, SettingsManager>();
 builder.Services.AddScoped<ISettingsDal, EfSettingsDal>();
+
+builder.Services.AddAutoMapper(typeof(AboutMapping));
+builder.Services.AddAutoMapper(typeof(AgentsMapping));
+builder.Services.AddAutoMapper(typeof(AmenitiesMapping));
+builder.Services.AddAutoMapper(typeof(Contact_MessagesMapping));
+builder.Services.AddAutoMapper(typeof(PropertiesMapping));
+builder.Services.AddAutoMapper(typeof(SettingsMapping));
+
+
 
 var app = builder.Build();
 
