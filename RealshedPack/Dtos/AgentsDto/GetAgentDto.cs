@@ -16,6 +16,6 @@ namespace RealshedPack.Dtos.AgentsDto
         public string Profile_Image { get; set; }
         public string Address { get; set; }
         public string Bio { get; set; }
-        public string Created_Time { get; set; }
+        public string? Created_Time { get; set; }
     }
 }
