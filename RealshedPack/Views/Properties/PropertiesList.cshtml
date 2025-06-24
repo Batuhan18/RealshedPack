@@ -1,8 +1,90 @@
-﻿
-@{
-    ViewData["Title"] = "PropertiesList";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
-}
+﻿    @model List<ResultPropertiesDto>
+    @{
+        ViewData["Title"] = "PropertiesList";
+        Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    }
 
-<h1>PropertiesList</h1>
+<div class="card-body">
+    <div class="card-sub">
+        Ürünler ile ilgili işlemleri aşağıdan gerçekleştirebilirsiniz
+    </div>
+
+    
+    <div style="overflow-x: auto; white-space: nowrap;">
+        <table class="table mt-3" style="min-width: 1500px;">
+            <thead>
+                <tr>
+                    <th scope="col">Başlık</th>
+                    <th scope="col">Seo</th>
+                    <th scope="col">Açıklama</th>
+                    <th scope="col">Fiyat</th>
+                    <th scope="col">Boyut</th>
+                    <th scope="col">Garaj Boyutu</th>
+                    <th scope="col">Yatak Odası</th>
+                    <th scope="col">Banyo</th>
+                    <th scope="col">Oda Sayısı</th>
+                    <th scope="col">Garaj Sayısı</th>
+                    <th scope="col">Yapım Yılı</th>
+                    <th scope="col">Ürün Tipi</th>
+                    <th scope="col">Durumu</th>
+                    <th scope="col">Şehri</th>
+                    <th scope="col">Cadde</th>
+                    <th scope="col">Ülke</th>
+                    <th scope="col">Zip Kodu</th>
+                    <th scope="col">Oluşturulma Tarihi</th>
+                    <th scope="col">Kapak Fotoğrafı</th>
+                    <th scope="col">1.Fotoğraf</th>
+                    <th scope="col">2.Fotoğraf</th>
+                    <th scope="col">3.Fotoğraf</th>
+                    <th scope="col">4.Fotoğraf</th>
+                    <th scope="col">5.Fotoğraf</th>
+                    <th scope="col">6.Fotoğraf</th>
+                    <th scope="col">7.Fotoğraf</th>
+                    <th scope="col">8.Fotoğraf</th>
+                    <th scope="col">9.Fotoğraf</th>
+                    <th scope="col">Sil</th>
+                    <th scope="col">Güncelle</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Title</td>
+                        <td>@item.Slug_Seo</td>
+                        <td>@item.Description</td>
+                        <td>@item.Price</td>
+                        <td>@item.Size</td>
+                        <td>@item.Garage_Size</td>
+                        <td>@item.Bedrooms</td>
+                        <td>@item.Bathrooms</td>
+                        <td>@item.Garage_Count</td>
+                        <td>@item.Build_Year</td>
+                        <td>@item.Property_Type</td>
+                        <td>@item.Status</td>
+                        <td>@item.City</td>
+                        <td>@item.State</td>
+                        <td>@item.Country</td>
+                        <td>@item.Zip_Code</td>
+                        <td>@item.Created_Time</td>
+                        <td>@item.MainPicture</td>
+                        <td>@item.Picture1</td>
+                        <td>@item.Picture2</td>
+                        <td>@item.Picture3</td>
+                        <td>@item.Picture4</td>
+                        <td>@item.Picture5</td>
+                        <td>@item.Picture6</td>
+                        <td>@item.Picture7</td>
+                        <td>@item.Picture8</td>
+                        <td>@item.Picture9</td>
+                        <td><a href="/Properties/DeleteProperties/@item.PropertiesId" class="btn btn-outline-danger">Sil</a></td>
+                        <td><a href="/Properties/UpdateProperties/@item.PropertiesId" class="btn btn-outline-success">Güncelle</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <a href="/Properties/CreateProperties/" class="btn btn-outline-primary mt-3">Yeni Hakkımızda Yazısı Girişi</a>
+</div>
 

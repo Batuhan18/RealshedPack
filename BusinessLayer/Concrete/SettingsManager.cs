@@ -12,6 +12,12 @@ namespace BusinessLayer.Concrete
     public class SettingsManager : ISettingsService
     {
         private readonly ISettingsDal _settingsDal;
+
+        public SettingsManager(ISettingsDal settingsDal)
+        {
+            _settingsDal = settingsDal;
+        }
+
         public void TAdd(Settings entity)
         {
             _settingsDal.Add(entity);

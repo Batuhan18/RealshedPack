@@ -18,7 +18,15 @@ namespace DataAccessLayer.EntitiyFramework
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            using (var context = new RealshedPackContext())
+            {
+                var entity = context.Set<Settings>().Find(id);
+                if (entity != null)
+                {
+                    context.Set<Settings>().Remove(entity);
+                    context.SaveChanges();
+                }
+            }
         }
     }
 }

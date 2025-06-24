@@ -1,7 +1,11 @@
 ﻿using AutoMapper;
 using BusinessLayer.Abstract;
+using DataAccessLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using RealshedPack.Dtos.PropertiesDto;
+using RealshedPack.Models;
 
 namespace RealshedPack.Controllers
 {
@@ -9,11 +13,13 @@ namespace RealshedPack.Controllers
     {
         private readonly IPropertiesService _propertiesService;
         private readonly IMapper _mapper;
+        private readonly RealshedPackContext _realshedPackContext;
 
-        public Properties(IPropertiesService propertiesService, IMapper mapper)
+        public Properties(IPropertiesService propertiesService, IMapper mapper, RealshedPackContext realshedPackContext)
         {
             _propertiesService = propertiesService;
             _mapper = mapper;
+            _realshedPackContext = realshedPackContext;
         }
 
         [HttpGet]
@@ -27,6 +33,15 @@ namespace RealshedPack.Controllers
         [HttpGet]
         public IActionResult CreateProperties()
         {
+            var agents = _realshedPackContext.Agents
+            .Select(a => new AgentOption
+            {
+                AgentId = a.AgentsId,
+                FullName = a.AgentName + " " + a.AgentSurname
+            }).ToList();
+
+            ViewBag.AgentOptions = new SelectList(agents, "Id", "FullName");
+
             return View();
         }
 

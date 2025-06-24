@@ -1,0 +1,104 @@
+﻿@model CreatePropertiesDto
+@{
+    ViewData["Title"] = "CreateProperties";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Ana Sayfa Ürün İşlemleri</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Yeni Ürün Girişi</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="title">Başlık Giriniz</label>
+                                <input type="text" class="form-control" asp-for="Title" id="title">
+                            </div>
+                            <div class="form-group">
+                                <label for="description">Açıklama Giriniz</label>
+                                <textarea rows="5" class="form-control" asp-for="Description"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="imageurl">Seo Giriniz</label>
+                                <input type="file" class="form-control" asp-for="Slug_Seo" id="imageurl">
+                            </div>
+                            <div class="form-group">
+                                <label for="title">Fiyat Giriniz</label>
+                                <input type="text" class="form-control" asp-for="Price" id="title">
+                            </div>
+                            <div class="form-group">
+                                <label for="title">Boyut</label>
+                                <input type="text" class="form-control" asp-for="Size" id="title">
+                            </div>
+                            <div class="form-group">
+                                <label for="title">Garaj Boyutu</label>
+                                <input type="text" class="form-control" asp-for="Garage_Size" id="title">
+                            </div>
+                            <div class="form-group">
+                                <label for="title">Yatak Odası Sayısı</label>
+                                <input type="text" class="form-control" asp-for="Bedrooms" id="title">
+                            </div>
+                            <div class="form-group">
+                                <label for="title">Banyo Sayısı</label>
+                                <input type="text" class="form-control" asp-for="Bathrooms" id="title">
+                            </div>
+                            <div class="form-group">
+                                <label for="title">Oda Sayısı</label>
+                                <input type="text" class="form-control" asp-for="Rooms" id="title">
+                            </div>
+                            <div class="form-group">
+                                <label for="title">Garaj Sayısı</label>
+                                <input type="text" class="form-control" asp-for="Garage_Count" id="title">
+                            </div>
+                            <div class="form-group">
+                                <label for="title">Yapım Yılı</label>
+                                <input type="text" class="form-control" asp-for="Build_Year" id="title">
+                            </div>
+                            <div class="form-group">
+                                <label for="title">Ürün Tipi</label>
+                                <input type="text" class="form-control" asp-for="Property_Type" id="title">
+                            </div>
+                            <div class="form-group">
+                                <label for="title">Durumu</label>
+                                <input type="text" class="form-control" asp-for="Status" id="title">
+                            </div>
+                            <div class="form-group">
+                                <label for="title">Temsilci Seçiniz</label>
+                                <select class="form-control" asp-for="AgentsId" asp-items="ViewBag.AgentOptions">
+                                    <option value="">-- Temsilci Seçin --</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="title">Şehir Giriniz</label>
+                                <input type="text" class="form-control" asp-for="City" id="title>
+                            </div>
+                            <div class="form-group">
+                                <label for="title">Durumu</label>
+                                <input type="text" class="form-control" asp-for="State" id="title>
+                            </div>
+                            <div class="form-group">
+                                <label for="title">Şehir Giriniz</label>
+                                <input type="text" class="form-control" asp-for="City" id="title>
+                            </div>
+                            <div class="form-group">
+                                <label for="title">Ülke Giriniz</label>
+                                <input type="text" class="form-control" asp-for="Country" id="title>
+                            </div>
+                            <div class="card-action">
+                                <button class="btn btn-primary">Ürün Yazısını Ekle</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+
+

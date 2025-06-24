@@ -1,0 +1,66 @@
+﻿@model List<ResultSettingDto>
+@{
+    ViewData["Title"] = "SettingList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Ana Sayfa Hakkımızda İşlemleri</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Hakkımızda Listesi</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-sub">
+                            Hakkımızda ile ilgili işlemleri aşağıdan gerçekleştirebilirsiniz
+                        </div>
+                        <table class="table mt-3">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Site Başlığı</th>
+                                    <th scope="col">Meta Açıklaması</th>
+                                    <th scope="col">Meta Anahtarı</th>
+                                    <th scope="col">Logo</th>
+                                    <th scope="col">Facebook</th>
+                                    <th scope="col">Instagram</th>
+                                    <th scope="col">Twitter</th>
+                                    <th scope="col">Telefon</th>
+                                    <th scope="col">Adres</th>
+                                    <th scope="col">Sil</th>
+                                    <th scope="col">Güncelle</th>
+
+                              
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.Site_Title</td>
+                                        <td>@item.Meta_Description</td>
+                                        <td>@item.Meta_Keywords</td>
+                                        <td>@item.Logo_Url</td>
+                                        <td>@item.Facebook_Url</td>
+                                        <td>@item.Instagram_Url</td>
+                                        <td>@item.Twitter_Url</td>
+                                        <td>@item.Phone</td>
+                                        <td>@item.Address</td>
+                                        <td><a href="/Settings/DeleteSettings/@item.SettingsId" class="btn btn-outline-danger">Sil</a></td>
+                                        <td><a href="/Settings/UpdateSettings/@item.SettingsId" class="btn btn-outline-success">Güncelle</a></td>
+
+
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <a href="/Settings/CreateSettings/" class="btn btn-outline-primary">Yeni Ayarlar Yazısı Girişi</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
