@@ -13,7 +13,6 @@ namespace RealshedPack.Dtos.PropertiesDto
         public string? Title { get; set; }
         public string? Slug_Seo { get; set; }
         public string? Description { get; set; }
-        public string PropertyId { get; set; }
         public decimal Price { get; set; }
         public int Size { get; set; }
         public string? Garage_Size { get; set; }
