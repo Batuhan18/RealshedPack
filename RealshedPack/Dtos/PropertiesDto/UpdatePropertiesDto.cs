@@ -23,8 +23,8 @@ namespace RealshedPack.Dtos.PropertiesDto
         public string? Build_Year { get; set; }
         public string? Property_Type { get; set; }
         public string? Status { get; set; }
-        public int? AgentsId { get; set; }
-        public Agents? Agents { get; set; }
+        public int AgentsId { get; set; }
+        public Agents Agents { get; set; }
         public string? City { get; set; }
         public string? State { get; set; }
         public string? Country { get; set; }

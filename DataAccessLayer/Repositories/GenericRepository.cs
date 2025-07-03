@@ -40,7 +40,7 @@ namespace DataAccessLayer.Repositories
             return _context.Set<T>().Find(id);
         }
 
-        public List<T> GetAllList()
+        public virtual List<T> GetAllList()
         {
             return _context.Set<T>().ToList();
         }

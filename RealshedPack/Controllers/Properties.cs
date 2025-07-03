@@ -40,7 +40,7 @@ namespace RealshedPack.Controllers
                 FullName = a.AgentName + " " + a.AgentSurname
             }).ToList();
 
-            ViewBag.AgentOptions = new SelectList(agents, "Id", "FullName");
+            ViewBag.AgentOptions = new SelectList(agents, "AgentId", "FullName");
 
             return View();
         }
@@ -62,6 +62,14 @@ namespace RealshedPack.Controllers
         [HttpGet]
         public IActionResult UpdateProperties(int id)
         {
+            var agents = _realshedPackContext.Agents
+          .Select(a => new AgentOption
+          {
+              AgentId = a.AgentsId,
+              FullName = a.AgentName + " " + a.AgentSurname
+          }).ToList();
+
+            ViewBag.AgentOptions = new SelectList(agents, "AgentId", "FullName");
             var proEntity = _propertiesService.TGetById(id);
             var updateDto = _mapper.Map<UpdatePropertiesDto>(proEntity);
             return View(updateDto);

@@ -1,7 +1,10 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
 
-<h1>Merhaba</h1>
+@await Component.InvokeAsync("_MainBannerComponent")
+@await Component.InvokeAsync("_MainPropertiesComponent")
+@await Component.InvokeAsync("_MainTestimonialComponent")
+
+

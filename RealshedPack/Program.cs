@@ -29,12 +29,16 @@ builder.Services.AddScoped<IPropertiesDal, EfPropertiesDal>();
 builder.Services.AddScoped<ISettingsService, SettingsManager>();
 builder.Services.AddScoped<ISettingsDal, EfSettingsDal>();
 
+builder.Services.AddScoped<ITestimonialService, TestimonialsManager>();
+builder.Services.AddScoped<ITestimonialsDal, EfTestimonialsDal>();
+
 builder.Services.AddAutoMapper(typeof(AboutMapping));
 builder.Services.AddAutoMapper(typeof(AgentsMapping));
 builder.Services.AddAutoMapper(typeof(AmenitiesMapping));
 builder.Services.AddAutoMapper(typeof(Contact_MessagesMapping));
 builder.Services.AddAutoMapper(typeof(PropertiesMapping));
 builder.Services.AddAutoMapper(typeof(SettingsMapping));
+builder.Services.AddAutoMapper(typeof(TestimonialMapping));
 
 
 
