@@ -1,0 +1,43 @@
+﻿@model List<ResultAgentDto>
+
+
+<section class="contact-info-section sec-pad centred">
+    <div class="auto-container">
+        <div class="sec-title">
+            <h5>Contact us</h5>
+            <h2>Get In Touch</h2>
+        </div>
+        @foreach (var item in Model)
+        {
+            <div class="row clearfix">
+                <div class="col-lg-4 col-md-6 col-sm-12 info-block">
+                    <div class="info-block-one">
+                        <div class="inner-box">
+                            <div class="icon-box"><i class="icon-32"></i></div>
+                            <h4>Email Address</h4>
+                            <p><a href="@item.Email">@item.Email</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 info-block">
+                    <div class="info-block-one">
+                        <div class="inner-box">
+                            <div class="icon-box"><i class="icon-33"></i></div>
+                            <h4>Phone Number</h4>
+                            <p><a href="tel:@item.Phone">@item.Phone</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 info-block">
+                    <div class="info-block-one">
+                        <div class="inner-box">
+                            <div class="icon-box"><i class="icon-34"></i></div>
+                            <h4>Office Address</h4>
+                            <p>@item.Address</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>

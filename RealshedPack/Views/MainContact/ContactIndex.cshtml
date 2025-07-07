@@ -1,0 +1,81 @@
+﻿@{
+    ViewData["Title"] = "ContactIndex";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+
+<!--Page Title-->
+<section class="page-title centred" style="background-image: url(/RealshedPack/Realshed/assets/images/background/page-title.jpg);">
+    <div class="auto-container">
+        <div class="content-box clearfix">
+            <h1>Contact Us</h1>
+            <ul class="bread-crumb clearfix">
+                <li><a href="index.html">Home</a></li>
+                <li>Contact Us</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!--End Page Title-->
+<!-- contact-info-section -->
+@await Component.InvokeAsync("_MainContactInfoComponent")
+<!-- contact-info-section end -->
+<!-- contact-section -->
+@model CreateContact_MessagesDto
+<section class="contact-section bg-color-1">
+    <div class="auto-container">
+        <div class="row align-items-center clearfix">
+            <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                <div class="content-box">
+                    <div class="sec-title">
+                        <h5>Contact</h5>
+                        <h2>Contact Us</h2>
+                    </div>
+                    <div class="form-inner">
+                        <form method="post">
+                            <div class="row clearfix">
+                                <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                    <input type="text" placeholder="Your Name" asp-for="Name" required="">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                    <input type="text" placeholder="Your Surname" asp-for="Surname" required="">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                    <input type="email" placeholder="Email address" asp-for="Email" required="">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                    <input type="text" placeholder="Phone" asp-for="Phone" required="">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                    <input type="text" placeholder="Subject" asp-for="Subject" required="">
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                                    <textarea placeholder="Message" asp-for="Message"></textarea>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 form-group message-btn">
+                                    <button class="theme-btn btn-one" type="submit" name="submit-form">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 map-column">
+                <div class="google-map-area">
+                    <div class="google-map"
+                         id="contact-google-map"
+                         data-map-lat="40.712776"
+                         data-map-lng="-74.005974"
+                         data-icon-path="assets/images/icons/map-marker.png"
+                         data-map-title="Brooklyn, New York, United Kingdom"
+                         data-map-zoom="12"
+                         data-markers='{
+                         "marker-1" : [40.712776, -74.005974, "<h4>Branch Office</h4><p>77/99 New York</p>" ,"assets /images/icons/map-marker.png"]
+                         }'>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- contact-section end -->
